@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+		"experimentalDecorators": true,
+        "target": "ES2019",
+        "outDir": "../dist",
+        "sourceMap": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "module": "CommonJS",
+        "skipLibCheck": true,
+        "resolveJsonModule": true
+    },
+    "include": [
+        "**/*"
+    ],
+    "exclude": [
+        "../node_modules"
+    ]
+}

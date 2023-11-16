@@ -1,0 +1,6 @@
+api.test.theclearvue.co.uk {
+  reverse_proxy clearvue-app:5000  {
+    header_down Strict-Transport-Security max-age=31536000;
+   }
+}
+

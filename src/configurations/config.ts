@@ -1,0 +1,106 @@
+import * as dotenv from 'dotenv';
+
+// dotenv init. To fetch environment variables from .env file.
+dotenv.config()
+
+export const config = {
+    APP_NAME: process.env.APP_NAME,
+    SERVICE_PORT: process.env.SERVICE_PORT,
+    ENVIRONMENT: process.env.ENVIRONMENT,
+    ERROR_WEBHOOK_URL: process.env.ERROR_WEBHOOK_URL,
+    PRODUCT_NAME: process.env.PRODUCT_NAME,
+    API_HOSTS: process.env.API_HOSTS || ['*'],
+    JWT_TOKEN_KEY: process.env.JWT_TOKEN_KEY || "-",
+    USER_ACCESS_TOKEN_EXPIRE_TIME: process.env.USER_ACCESS_TOKEN_EXPIRE_TIME || "300s",
+    WORKER_ACCESS_TOKEN_EXPIRE_TIME: process.env.WORKER_ACCESS_TOKEN_EXPIRE_TIME || '365000d',
+    USER_REFRESH_TOKEN_EXPIRE_TIME: process.env.USER_REFRESH_TOKEN_EXPIRE_TIME || "1d",
+    RESET_PASSWORD_LINK_EXPIRE_TIME: process.env.RESET_PASSWORD_LINK_EXPIRE_TIME || "1d",
+    PORTAL_HOST_URL: process.env.CUSTOMER_PORTAL_HOST_URL,
+    MAX_BULK_WORKER_UPLOAD_LIMIT: process.env.MAX_BULK_WORKER_UPLOAD_LIMIT || 10000,
+    MAX_REPEAT_BOOKING_ALLOWED: process.env.MAX_REPEAT_BOOKING_ALLOWED || 4,
+    CRONJOB_ACCESS_TOKEN: process.env.CRONJOB_ACCESS_TOKEN,
+
+    // Notification Sending config
+    FIREBASE_SERVER_KEY: process.env.FIREBASE_SERVER_KEY,
+    NOTIFICATION_TITLE_CHARACTER_LIMIT: parseInt(process.env.NOTIFICATION_TITLE_CHARACTER_LIMIT) || 500,
+    NOTIFICATION_BODY_CHARACTER_LIMIT: parseInt(process.env.NOTIFICATION_BODY_CHARACTER_LIMIT) || 3000,
+
+    // logging configurations
+    ENABLE_CONSOLE_LOGGER: parseInt(process.env.ENABLE_CONSOLE_LOGGER) || 0,
+    ENABLE_SLACK_ERROR_NOTIFICATION: parseInt(process.env.ENABLE_SLACK_ERROR_NOTIFICATION) || 0,
+    ENABLE_FILE_LOGGER: parseInt(process.env.ENABLE_FILE_LOGGER) || 0,
+
+    //Node Config
+    NODE_ENV: process.env.NODE_ENV,
+
+    //AWS Configurations
+    ACCESS_KEY_ID: process.env.ACCESS_KEY_ID,
+    SECRET_ACCESS_KEY: process.env.SECRET_ACCESS_KEY,
+    S3_REGION: process.env.S3_REGION,
+    SIGNED_URL_EXPIRE_TIME: parseInt(process.env.SIGNED_URL_EXPIRE_TIME) || 604800,
+    BUCKET_URL: process.env.BUCKET_URL,
+    BUCKET_NAME: process.env.BUCKET_NAME,
+    WORKER_BUCKET_FOLDER: process.env.WORKER_BUCKET_FOLDER,
+    PROFILE_BUCKET_FOLDER: process.env.PROFILE_BUCKET_FOLDER,
+    DOCUMENTS_FOLDER: process.env.DOCUMENTS_FOLDER,
+    TIME_AND_ATTENDANCE_FOLDER: process.env.TIME_AND_ATTENDANCE_FOLDER,
+    WORKER_SAMPLE_DOWNLOAD_BUCKET_KEY: process.env.WORKER_SAMPLE_DOWNLOAD_BUCKET_KEY,
+    DEFAULT_IMAGE: process.env.DEFAULT_IMAGE,
+    MAX_IMAGE_SIZE: process.env.MAX_IMAGE_SIZE || 5000000,
+    DEFAULT_SYSTEM_USER_ID: process.env.DEFAULT_SYSTEM_USER_ID || 1,
+    EXIT_SURVEY_QUESTION_ID: process.env.EXIT_SURVEY_QUESTION_ID,
+    EXIT_SURVEY_ID: process.env.EXIT_SURVEY_ID,
+    PAYROLL_REPORT_FOLDER: process.env.PAYROLL_REPORT_FOLDER,
+    PAYROLL_REPORT_SAMPLE_FOLDER: process.env.PAYROLL_REPORT_SAMPLE_FOLDER,
+    PAYROLL_REPORT_SAMPLE_FILE_NAME: process.env.PAYROLL_REPORT_SAMPLE_FILE_NAME,
+    TIME_AND_ATTENDANCE_SAMPLE_FOLDER: process.env.TIME_AND_ATTENDANCE_SAMPLE_FOLDER,
+    TIME_AND_ATTENDANCE_SAMPLE_FILE_NAME: process.env.TIME_AND_ATTENDANCE_SAMPLE_FILE_NAME,
+
+    // Survey
+    GENERAL_SURVEY_ID: process.env.GENERAL_SURVEY_ID || 7,
+    PERMANENT_WORKER_ALLOWED_SURVEYS: process.env.PERMANENT_WORKER_ALLOWED_SURVEYS || "[1, 2, 3, 4, 5, 7]",
+
+    //Worker
+    TEMPORARY_WORKER: process.env.TEMPORARY_WORKER || "TEMPORARY",
+    PERMANENT_WORKER: process.env.PERMANENT_WORKER || "PERMANENT",
+
+    // Sendgrid configurations
+    Sendgrid: {
+        API_KEY: process.env.SENDGRID_API_KEY,
+        FROM_EMAIL: process.env.FROM_EMAIL,
+        FORGOT_PASSWORD_EMAIL_TEMPLATE: process.env.FORGOT_PASSWORD_EMAIL_TEMPLATE,
+        INVITE_USER_EMAIL_TEMPLATE: process.env.INVITE_USER_EMAIL_TEMPLATE,
+        BOOKING_NOTIFICATION_EMAIL_TEMPLATE: process.env.BOOKING_NOTIFICATION_EMAIL_TEMPLATE
+    },
+
+    // Graylog config
+    grayLog: {
+        ENABLE_GRAYLOG: parseInt(process.env.ENABLE_GRAYLOG),
+        GRAYLOG_HOST: process.env.GRAYLOG_HOST,
+        GRAYLOG_PORT: parseInt(process.env.GRAYLOG_PORT) || 12201
+    },
+
+    // MySQL config
+    mySql: {
+        MYSQL_DATABASE_HOST: process.env.MYSQL_DATABASE_HOST,
+        MYSQL_DATABASE_NAME: process.env.MYSQL_DATABASE_DB,
+        MYSQL_DATABASE_USER: process.env.MYSQL_DATABASE_USER,
+        MYSQL_DATABASE_PASSWORD: process.env.MYSQL_DATABASE_PASSWORD
+    },
+
+    // bugsnag
+    bugsnag: {
+        BUGSNAG_APP_KEY: process.env.BUGSNAG_API_KEY,
+        ENABLE_BUGSNAG_ERROR_LOGGING: parseInt(process.env.ENABLE_BUGSNAG_ERROR_LOGGING) || 0
+    },
+
+    // api docs
+    swagger: {
+        ENABLE_API_DOCS: parseInt(process.env.ENABLE_API_DOCS) || 0
+    },
+
+    // Payroll
+    NI_THRESHOLD: process.env.NI_THRESHOLD || 175,
+    NI_PERCENT: process.env.NI_PERCENT || 15.05,
+    HOLIDAY_PAY_PERCENT: process.env.HOLIDAY_PAY_PERCENT || 12.55
+}
